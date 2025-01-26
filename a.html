@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(https://i.pinimg.com/736x/af/5a/3c/af5a3c96f13f32682b82e2beca52d61f.jpg);
+           /* background-color: #522f49;
+ */
+        }
+
+        .icon-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+           /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            justify-items: center;    
+            background-color: #f8d7da;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon span {
+            font-size: 1.4em;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        .icon-text {
+            font-size: 1.2em;
+            color: rgb(250, 249, 250);
+            font-weight: bold;
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header style="background-color: rgb(63, 21, 58); padding: 90px; text-align: center; color: #fff;">
+        <h1>HABIT TRACKER</h1>
+        <p style="margin: 0; font-size: 1.2em;">Track to transform</p>
+    </header>
+
+    <section class="icon-container">
+        <div class="icon">
+            <div class="icon-text">Stress Meter</div>
+            <span>Track your stress levels</span>
+        </div>
+        <div class="icon">
+            <div class="icon-text">Sleep Tracker</div>
+            <span>Track your sleep patterns</span>
+        </div>
+        <div class="icon">
+            <div class="icon-text">Diet Logger</div>
+            <span>Track your meals</span>
+        </div>
+        <div class="icon">
+            <div class="icon-text">Social Tracker</div>
+            <span>Track your social interactions</span>
+        </div>
+    </section>
+</body>
+</html>
