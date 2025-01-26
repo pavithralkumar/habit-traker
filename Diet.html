@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIET LOGGER</title>
+    <style>
+        body {
+            font-family: Times New Roman, serif;
+            text-align: center;
+            margin: 35px;
+            background-image: url('https://i.pinimg.com/736x/37/8e/8e/378e8e1c30d644c7ff38a0f25292aff1.jpg'); 
+            background-size: cover;
+            background-position: center center
+            background-repeat: no-repeat;
+        }
+        table {
+            margin: 35px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 2px solid #ddddddfe;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #64034A;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: #FCFAFB;
+        }
+        tr:hover{
+            background-color: #F1F1F1;
+        }
+    </style>
+    <script>
+        function limitCheckboxSelection(day) {
+            var checkboxes = document.getElementsByName(day);
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].onclick = function() {
+                    var checkedCount = 0;
+                    for (var j = 0; j < checkboxes.length; j++) {
+                        if (checkboxes[j].checked) {
+                            checkedCount++;
+                        }
+                    }
+                    if (checkedCount > 1) {
+                        this.checked = false;
+                    }
+                };
+            }
+        }
+        window.onload = function() {
+            limitCheckboxSelection('sunday');
+            limitCheckboxSelection('monday');
+            limitCheckboxSelection('tuesday');
+            limitCheckboxSelection('wednesday');
+            limitCheckboxSelection('thursday');
+            limitCheckboxSelection('friday');
+            limitCheckboxSelection('saturday');
+        }
+    </script>
+</head>
+<body>
+    <h1>DIET LOGGER</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Excellent</td>
+                <td><input type="checkbox" name="sunday" value="excellent"></td>
+                <td><input type="checkbox" name="monday" value="excellent"></td>
+                <td><input type="checkbox" name="tuesday" value="excellent"></td>
+                <td><input type="checkbox" name="wednesday" value="excellent"></td>
+                <td><input type="checkbox" name="thursday" value="excellent"></td>
+                <td><input type="checkbox" name="friday" value="excellent"></td>
+                <td><input type="checkbox" name="saturday" value="excellent"></td>
+            </tr>
+            <tr>
+                <td>Good</td>
+                <td><input type="checkbox" name="sunday" value="good"></td>
+                <td><input type="checkbox" name="monday" value="good"></td>
+                <td><input type="checkbox" name="tuesday" value="good"></td>
+                <td><input type="checkbox" name="wednesday" value="good"></td>
+                <td><input type="checkbox" name="thursday" value="good"></td>
+                <td><input type="checkbox" name="friday" value="good"></td>
+                <td><input type="checkbox" name="saturday" value="good"></td>
+            </tr>
+            <tr>
+                <td>Ok</td>
+                <td><input type="checkbox" name="sunday" value="ok"></td>
+                <td><input type="checkbox" name="monday" value="ok"></td>
+                <td><input type="checkbox" name="tuesday" value="ok"></td>
+                <td><input type="checkbox" name="wednesday" value="ok"></td>
+                <td><input type="checkbox" name="thursday" value="ok"></td>
+                <td><input type="checkbox" name="friday" value="ok"></td>
+                <td><input type="checkbox" name="saturday" value="ok"></td>
+            </tr>
+            <tr>
+                <td>Bad</td>
+                <td><input type="checkbox" name="sunday" value="bad"></td>
+                <td><input type="checkbox" name="monday" value="bad"></td>
+                <td><input type="checkbox" name="tuesday" value="bad"></td>
+                <td><input type="checkbox" name="wednesday" value="bad"></td>
+                <td><input type="checkbox" name="thursday" value="bad"></td>
+                <td><input type="checkbox" name="friday" value="bad"></td>
+                <td><input type="checkbox" name="saturday" value="bad"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
