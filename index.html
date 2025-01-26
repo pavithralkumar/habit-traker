@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Habit Tracker</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #ffd1dc, #d7bbf5);
+            color: #333;
+        }
+
+        header {
+            background-color: rgba(53, 25, 53, 0.9);
+            color: #ecf0f1;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        .icon-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #f7f9fa;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            text-decoration: none;
+            color: #2c3e50;
+        }
+
+        .icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+            background-color: #d7bbf5;
+            color: #fff;
+        }
+
+        .icon-text {
+            font-size: 1.4em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .icon span {
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <header>
+        <h1>HABIT TRACKER</h1>
+        <p>Track to transform</p>
+    </header>
+
+    <section class="icon-container">
+        <a href="stress.html" class="icon">
+            <div class="icon-text">Stress Meter</div>
+            <span>Track your stress levels</span>
+        </a>
+        <a href="sleep.html" class="icon">
+            <div class="icon-text">Sleep Tracker</div>
+            <span>Track your sleep patterns</span>
+        </a>
+        <a href="diet.html" class="icon">
+            <div class="icon-text">Diet Logger</div>
+            <span>Track your meals</span>
+        </a>
+        <a href="social.html" class="icon">
+            <div class="icon-text">Social Tracker</div>
+            <span>Track your social interactions</span>
+        </a>
+    </section>
+
 </body>
 </html>

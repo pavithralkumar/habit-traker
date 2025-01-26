@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLEEP TRACKER</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/736x/30/47/cb/3047cbde2aa7afd26b80ca14a92f707b.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #64034a;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #fcfafb;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <script>
+        // Function to handle checkbox clicks and save their state in localStorage
+        function handleCheckboxClick(rowIndex, columnIndex) {
+            const checkbox = document.querySelector(`#checkbox-${rowIndex}-${columnIndex}`);
+            const isChecked = checkbox.checked;
+
+            // Store checkbox state in localStorage
+            localStorage.setItem(`checkbox-${rowIndex}-${columnIndex}`, isChecked);
+        }
+
+        // Function to load the saved states of the checkboxes
+        function loadCheckboxStates() {
+            // Iterate over all checkboxes and restore their states from localStorage
+            for (let rowIndex = 0; rowIndex < 4; rowIndex++) {
+                for (let columnIndex = 0; columnIndex < 7; columnIndex++) {
+                    const checkbox = document.querySelector(`#checkbox-${rowIndex}-${columnIndex}`);
+                    const savedState = localStorage.getItem(`checkbox-${rowIndex}-${columnIndex}`);
+                    if (savedState !== null) {
+                        checkbox.checked = (savedState === 'true');
+                    }
+                }
+            }
+        }
+
+        // Load the states of the checkboxes when the page is loaded
+        window.onload = loadCheckboxStates;
+    </script>
+</head>
+<body>
+    <h1>SLEEP TRACKER</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Excellent</td>
+                <td><input id="checkbox-0-0" type="checkbox" onclick="handleCheckboxClick(0, 0)"></td>
+                <td><input id="checkbox-0-1" type="checkbox" onclick="handleCheckboxClick(0, 1)"></td>
+                <td><input id="checkbox-0-2" type="checkbox" onclick="handleCheckboxClick(0, 2)"></td>
+                <td><input id="checkbox-0-3" type="checkbox" onclick="handleCheckboxClick(0, 3)"></td>
+                <td><input id="checkbox-0-4" type="checkbox" onclick="handleCheckboxClick(0, 4)"></td>
+                <td><input id="checkbox-0-5" type="checkbox" onclick="handleCheckboxClick(0, 5)"></td>
+                <td><input id="checkbox-0-6" type="checkbox" onclick="handleCheckboxClick(0, 6)"></td>
+            </tr>
+            <tr>
+                <td>Good</td>
+                <td><input id="checkbox-1-0" type="checkbox" onclick="handleCheckboxClick(1, 0)"></td>
+                <td><input id="checkbox-1-1" type="checkbox" onclick="handleCheckboxClick(1, 1)"></td>
+                <td><input id="checkbox-1-2" type="checkbox" onclick="handleCheckboxClick(1, 2)"></td>
+                <td><input id="checkbox-1-3" type="checkbox" onclick="handleCheckboxClick(1, 3)"></td>
+                <td><input id="checkbox-1-4" type="checkbox" onclick="handleCheckboxClick(1, 4)"></td>
+                <td><input id="checkbox-1-5" type="checkbox" onclick="handleCheckboxClick(1, 5)"></td>
+                <td><input id="checkbox-1-6" type="checkbox" onclick="handleCheckboxClick(1, 6)"></td>
+            </tr>
+            <tr>
+                <td>Ok</td>
+                <td><input id="checkbox-2-0" type="checkbox" onclick="handleCheckboxClick(2, 0)"></td>
+                <td><input id="checkbox-2-1" type="checkbox" onclick="handleCheckboxClick(2, 1)"></td>
+                <td><input id="checkbox-2-2" type="checkbox" onclick="handleCheckboxClick(2, 2)"></td>
+                <td><input id="checkbox-2-3" type="checkbox" onclick="handleCheckboxClick(2, 3)"></td>
+                <td><input id="checkbox-2-4" type="checkbox" onclick="handleCheckboxClick(2, 4)"></td>
+                <td><input id="checkbox-2-5" type="checkbox" onclick="handleCheckboxClick(2, 5)"></td>
+                <td><input id="checkbox-2-6" type="checkbox" onclick="handleCheckboxClick(2, 6)"></td>
+            </tr>
+            <tr>
+                <td>Bad</td>
+                <td><input id="checkbox-3-0" type="checkbox" onclick="handleCheckboxClick(3, 0)"></td>
+                <td><input id="checkbox-3-1" type="checkbox" onclick="handleCheckboxClick(3, 1)"></td>
+                <td><input id="checkbox-3-2" type="checkbox" onclick="handleCheckboxClick(3, 2)"></td>
+                <td><input id="checkbox-3-3" type="checkbox" onclick="handleCheckboxClick(3, 3)"></td>
+                <td><input id="checkbox-3-4" type="checkbox" onclick="handleCheckboxClick(3, 4)"></td>
+                <td><input id="checkbox-3-5" type="checkbox" onclick="handleCheckboxClick(3, 5)"></td>
+                <td><input id="checkbox-3-6" type="checkbox" onclick="handleCheckboxClick(3, 6)"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
