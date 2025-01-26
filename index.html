@@ -6,6 +6,117 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLEEP TRACKER</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            background-image: url('https://i.pinimg.com/736x/21/d6/0e/21d60e8df93f0fe0bc78736816c30476.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #64034a;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #fcfafb;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+    <script>
+        function handleCheckboxClick(columnIndex) {
+            const checkboxes = document.querySelectorAll(`td:nth-child(${columnIndex + 1}) input[type=checkbox]`);
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+            event.target.checked = true;
+        }
+    </script>
+</head>
+<body>
+    <h1>SLEEP TRACKER</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Excellent</td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(1)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(2)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(3)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(4)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(5)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(6)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(7)"></td>
+            </tr>
+            <tr>
+                <td>Good</td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(1)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(2)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(3)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(4)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(5)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(6)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(7)"></td>
+            </tr>
+            <tr>
+                <td>Ok</td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(1)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(2)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(3)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(4)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(5)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(6)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(7)"></td>
+            </tr>
+            <tr>
+                <td>Bad</td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(1)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(2)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(3)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(4)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(5)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(6)"></td>
+                <td><input type="checkbox" onclick="handleCheckboxClick(7)"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
 </body>
 </html>
