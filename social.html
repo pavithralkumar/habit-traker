@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOCIAL TRACKER</title>
+    <style>
+        body {
+            font-family: Times New Roman, serif;
+            text-align: center;
+            margin: 35px;
+            background-image: url('https://i.pinimg.com/736x/15/8f/05/158f05a504446bf3ff9e6c58b5f6f773.jpg'); 
+            background-size: cover;
+            background-position: center center; 
+            background-repeat: no-repeat;
+        }
+        table {
+            margin: 35px auto;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 2px solid #28022d36;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #64034A;
+            color: white;
+        }
+        tr:nth-child(even){
+            background-color: #FCFAFB;
+        }
+        tr:hover{
+            background-color: #F1F1F1;
+        }
+    </style>
+    <script>
+        // Function to limit the number of selected checkboxes per day
+        function limitCheckboxSelection(day) {
+            var checkboxes = document.getElementsByName(day);
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].onclick = function() {
+                    var checkedCount = 0;
+                    for (var j = 0; j < checkboxes.length; j++) {
+                        if (checkboxes[j].checked) {
+                            checkedCount++;
+                        }
+                    }
+                    if (checkedCount > 1) {
+                        this.checked = false;
+                    }
+                };
+            }
+        }
+
+        // Save the checkbox states to localStorage
+        function saveState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                localStorage.setItem(checkbox.name + '-' + checkbox.value, checkbox.checked);
+            });
+        }
+
+        // Load the checkbox states from localStorage
+        function loadState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                const state = localStorage.getItem(checkbox.name + '-' + checkbox.value);
+                checkbox.checked = (state === 'true');
+            });
+        }
+
+        // Initialize the script when the window is loaded
+        window.onload = function() {
+            limitCheckboxSelection('sunday');
+            limitCheckboxSelection('monday');
+            limitCheckboxSelection('tuesday');
+            limitCheckboxSelection('wednesday');
+            limitCheckboxSelection('thursday');
+            limitCheckboxSelection('friday');
+            limitCheckboxSelection('saturday');
+
+            // Load the saved states when the page is loaded
+            loadState();
+
+            // Add event listeners to save the state when a checkbox is clicked
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', saveState);
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>SOCIAL TRACKER</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Sunday</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Excellent</td>
+                <td><input type="checkbox" name="sunday" value="excellent"></td>
+                <td><input type="checkbox" name="monday" value="excellent"></td>
+                <td><input type="checkbox" name="tuesday" value="excellent"></td>
+                <td><input type="checkbox" name="wednesday" value="excellent"></td>
+                <td><input type="checkbox" name="thursday" value="excellent"></td>
+                <td><input type="checkbox" name="friday" value="excellent"></td>
+                <td><input type="checkbox" name="saturday" value="excellent"></td>
+            </tr>
+            <tr>
+                <td>Good</td>
+                <td><input type="checkbox" name="sunday" value="good"></td>
+                <td><input type="checkbox" name="monday" value="good"></td>
+                <td><input type="checkbox" name="tuesday" value="good"></td>
+                <td><input type="checkbox" name="wednesday" value="good"></td>
+                <td><input type="checkbox" name="thursday" value="good"></td>
+                <td><input type="checkbox" name="friday" value="good"></td>
+                <td><input type="checkbox" name="saturday" value="good"></td>
+            </tr>
+            <tr>
+                <td>Ok</td>
+                <td><input type="checkbox" name="sunday" value="ok"></td>
+                <td><input type="checkbox" name="monday" value="ok"></td>
+                <td><input type="checkbox" name="tuesday" value="ok"></td>
+                <td><input type="checkbox" name="wednesday" value="ok"></td>
+                <td><input type="checkbox" name="thursday" value="ok"></td>
+                <td><input type="checkbox" name="friday" value="ok"></td>
+                <td><input type="checkbox" name="saturday" value="ok"></td>
+            </tr>
+            <tr>
+                <td>Bad</td>
+                <td><input type="checkbox" name="sunday" value="bad"></td>
+                <td><input type="checkbox" name="monday" value="bad"></td>
+                <td><input type="checkbox" name="tuesday" value="bad"></td>
+                <td><input type="checkbox" name="wednesday" value="bad"></td>
+                <td><input type="checkbox" name="thursday" value="bad"></td>
+                <td><input type="checkbox" name="friday" value="bad"></td>
+                <td><input type="checkbox" name="saturday" value="bad"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
